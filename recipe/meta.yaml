@@ -1,17 +1,19 @@
-{% set version = "2019.1.0" %}
+{% set version = "2019.2.0" %}
+{% set date = "20210419" %}
+{% set commit = "7d418fa0a372ac6f5e103533ab77ad6a9fac764c" %}
 
 package:
   name: fenics-fiat
-  version: {{ version }}
+  version: {{ version }}.dev{{ date }}
 
 source:
-  url: https://bitbucket.org/fenics-project/fiat/downloads/fiat-{{ version }}.tar.gz
-  sha256: 341a1046cbe0f5f2eb26630c2f71f378b0dca51daf9892a54a2ff193970371e9
+  url: https://github.com/fenics/fiat/archive/{{ commit }}.tar.gz
+  sha256: f7a6190e25296a5e01896c501fad3fc8904ee65ceb72222a4306e18a0cea56a0
 
 build:
-  number: 39
+  number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install --no-deps . -vv
 
 requirements:
   host:
@@ -23,8 +25,12 @@ requirements:
     - setuptools
     - sympy >=1
 test:
+  requires:
+    - pip
   imports:
     - FIAT
+  commands:
+    - pip check
 about:
   home: https://www.fenicsproject.org
   license: LGPL-3.0-or-later
