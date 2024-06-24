@@ -42,14 +42,14 @@ Current release info
 Installing fenics-fiat
 ======================
 
-Installing `fenics-fiat` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `fenics-fiat` from the `conda-forge/label/fenics-dev` channel can be achieved by adding `conda-forge/label/fenics-dev` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/fenics-dev
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `fenics-fiat` can be installed with `conda`:
+Once the `conda-forge/label/fenics-dev` channel has been enabled, `fenics-fiat` can be installed with `conda`:
 
 ```
 conda install fenics-fiat
@@ -64,26 +64,26 @@ mamba install fenics-fiat
 It is possible to list all of the versions of `fenics-fiat` available on your platform with `conda`:
 
 ```
-conda search fenics-fiat --channel conda-forge
+conda search fenics-fiat --channel conda-forge/label/fenics-dev
 ```
 
 or with `mamba`:
 
 ```
-mamba search fenics-fiat --channel conda-forge
+mamba search fenics-fiat --channel conda-forge/label/fenics-dev
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search fenics-fiat --channel conda-forge
+mamba repoquery search fenics-fiat --channel conda-forge/label/fenics-dev
 
 # List packages depending on `fenics-fiat`:
-mamba repoquery whoneeds fenics-fiat --channel conda-forge
+mamba repoquery whoneeds fenics-fiat --channel conda-forge/label/fenics-dev
 
 # List dependencies of `fenics-fiat`:
-mamba repoquery depends fenics-fiat --channel conda-forge
+mamba repoquery depends fenics-fiat --channel conda-forge/label/fenics-dev
 ```
 
 
